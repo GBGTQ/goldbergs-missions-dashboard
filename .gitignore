@@ -1,0 +1,10 @@
+﻿# Credentials - never commit these
+automation/github_config.py
+automation/azure_config.py
+
+# Data files
+*.csv
+
+# Logs
+automation/refresh.log
+automation/backups/
