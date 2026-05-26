@@ -25,7 +25,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install playwright
+          pip install requests playwright
           playwright install chromium --with-deps
 
       - name: Fetch Springshot data & rebuild dashboard
