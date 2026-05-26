@@ -648,14 +648,6 @@ body.wall .wall-banner .pulse {
         <div class="card-chart xtall"><canvas id="cLateByLead"></canvas></div>
       </div>
     </section>
-
-    <div class="section-title">Avg. Departure Delay by Date</div>
-    <section class="grid grid-1">
-      <div class="card">
-        <h3>Average departure delay per day <span class="hint">minutes late &middot; missions with recorded flight delay data</span></h3>
-        <div class="card-chart xtall"><canvas id="cAvgDelay"></canvas></div>
-      </div>
-    </section>
   </div>
 
     <div class="tab-panel" id="panel-timeline">
@@ -1028,38 +1020,6 @@ function renderCharts(rows) {
   bar("cTeamLead",
     tl.map(e => [e[0], +e[1].toFixed(1)]),
     { horizontal: true, label: "Avg Productivity", suffix: "%", color: PALETTE.teal, counts: tl.map(e => e[2]), xtitle: "Avg Productivity (%)" });
-
-  // — Avg departure delay by date —
-  const delayByDate = new Map();
-  const delayCntByDate = new Map();
-  for (const r of rows) {
-    if (r.delay === null || r.delay === undefined) continue;
-    delayByDate.set(r.ma, (delayByDate.get(r.ma) || 0) + r.delay);
-    delayCntByDate.set(r.ma, (delayCntByDate.get(r.ma) || 0) + 1);
-  }
-  const MONTHS_D = {Jan:0,Feb:1,Mar:2,Apr:3,May:4,Jun:5,Jul:6,Aug:7,Sep:8,Oct:9,Nov:10,Dec:11};
-  const avgDelayEntries = [...delayByDate.entries()]
-    .map(([d, sum]) => [d, +(sum / delayCntByDate.get(d)).toFixed(1)])
-    .sort((a, b) => {
-      const [am, ad] = a[0].split(' '), [bm, bd] = b[0].split(' ');
-      return MONTHS_D[am] - MONTHS_D[bm] || +ad - +bd;
-    });
-  const avgDelayEl = document.getElementById('cAvgDelay');
-  if (avgDelayEl) {
-    let avgOverlay = avgDelayEl.parentElement.querySelector('.chart-empty-overlay');
-    if (avgDelayEntries.length === 0) {
-      if (!avgOverlay) {
-        avgOverlay = document.createElement('div');
-        avgOverlay.className = 'chart-empty-overlay';
-        avgDelayEl.parentElement.insertBefore(avgOverlay, avgDelayEl);
-      }
-      avgOverlay.textContent = 'No delay data available.';
-      destroy('cAvgDelay');
-    } else {
-      if (avgOverlay) avgOverlay.textContent = '';
-      bar('cAvgDelay', avgDelayEntries, { label: 'Avg delay (min)', color: PALETTE.amber, suffix: ' min' });
-    }
-  }
 }
 
 
