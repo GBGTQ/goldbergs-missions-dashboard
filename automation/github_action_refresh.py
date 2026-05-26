@@ -290,6 +290,18 @@ def main():
     csv_text = missions_to_csv(missions)
     added, skipped, total = merge_and_rebuild(csv_text)
 
+    # 4. Stamp the actual Eastern Time into the dashboard's snapshot display
+    from datetime import timezone
+    from zoneinfo import ZoneInfo
+    import re as _re
+    _eastern = ZoneInfo("America/New_York")
+    _now_et = datetime.now(timezone.utc).astimezone(_eastern)
+    _snap = _now_et.strftime("%b %-d, %Y at %I:%M %p ") + _now_et.strftime("%Z")
+    _html = DASHBOARD_PATH.read_text(encoding="utf-8")
+    _html = _re.sub(r'(?<=id="snaptime">)[^<]*(?=<)', _snap, _html)
+    DASHBOARD_PATH.write_text(_html, encoding="utf-8")
+    log(f"Snapshot timestamp set to: {_snap}")
+
     log("=" * 60)
     log(f"DONE — {len(missions)} missions | {non_zero} delayed | +{added} new | {total} master total")
     log(f"Dashboard: {DASHBOARD_PATH}")
