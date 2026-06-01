@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Financing — Mainline Aviation</title>
+<title>Financing - Mainline Aviation</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
 <style>
 
@@ -367,7 +367,7 @@ body.wall .wall-banner .pulse {
   border-radius: 2px;
   pointer-events: none;
 }
-/* Mission colors ÃÂ¢ÃÂÃÂ applied to lane-label and lane-accent via inline style */
+/* Mission colors ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ applied to lane-label and lane-accent via inline style */
 .tl-times .lbl.m1 .ev, .tl-bar.multi .lane-label.m1 { color: #22d3ee; }
 .tl-times .lbl.m2 .ev, .tl-bar.multi .lane-label.m2 { color: #a78bfa; }
 .tl-times .lbl.m3 .ev, .tl-bar.multi .lane-label.m3 { color: #4ade80; }
@@ -542,10 +542,10 @@ body{margin:0;padding:24px;box-sizing:border-box;background:#0a0e1a;}
 </head>
 <body>
 <section class="kpis" id="fin-kpis"></section>
-<div class="section-title">Food Cost by Flight — May 2026</div>
+<div class="section-title">Food Cost by Flight - May 2026</div>
 <section class="grid grid-1">
   <div class="card">
-    <h3>Daily Food Cost <span class="hint">USD · supplier invoice incl. tax</span></h3>
+    <h3>Daily Food Cost <span class="hint">USD - supplier invoice incl. tax</span></h3>
     <div class="card-chart tall"><canvas id="cFoodCost"></canvas></div>
   </div>
 </section>
@@ -553,59 +553,38 @@ body{margin:0;padding:24px;box-sizing:border-box;background:#0a0e1a;}
 <section class="grid grid-1">
   <div class="card" style="padding:0;overflow:hidden;">
     <table style="width:100%;border-collapse:collapse;font-size:13px;">
-      <thead>
-        <tr style="background:rgba(255,255,255,0.05);text-align:left;">
-          <th style="padding:10px 14px;font-weight:600;border-bottom:1px solid rgba(255,255,255,0.07);">Date</th>
-          <th style="padding:10px 14px;font-weight:600;border-bottom:1px solid rgba(255,255,255,0.07);">Flight</th>
-          <th style="padding:10px 14px;font-weight:600;border-bottom:1px solid rgba(255,255,255,0.07);">Route</th>
-          <th style="padding:10px 14px;font-weight:600;border-bottom:1px solid rgba(255,255,255,0.07);text-align:right;">Food Cost</th>
-          <th style="padding:10px 14px;font-weight:600;border-bottom:1px solid rgba(255,255,255,0.07);text-align:center;">Missions</th>
-          <th style="padding:10px 14px;font-weight:600;border-bottom:1px solid rgba(255,255,255,0.07);text-align:right;">Cost / Mission</th>
-        </tr>
-      </thead>
+      <thead><tr style="background:rgba(255,255,255,0.05);text-align:left;">
+        <th style="padding:10px 14px;font-weight:600;border-bottom:1px solid rgba(255,255,255,0.07);">Date</th>
+        <th style="padding:10px 14px;font-weight:600;border-bottom:1px solid rgba(255,255,255,0.07);">Flight</th>
+        <th style="padding:10px 14px;font-weight:600;border-bottom:1px solid rgba(255,255,255,0.07);">Route</th>
+        <th style="padding:10px 14px;font-weight:600;border-bottom:1px solid rgba(255,255,255,0.07);text-align:right;">Food Cost</th>
+        <th style="padding:10px 14px;font-weight:600;border-bottom:1px solid rgba(255,255,255,0.07);text-align:center;">Missions</th>
+        <th style="padding:10px 14px;font-weight:600;border-bottom:1px solid rgba(255,255,255,0.07);text-align:right;">Cost / Mission</th>
+      </tr></thead>
       <tbody id="finBody"></tbody>
       <tfoot id="finFoot"></tfoot>
     </table>
   </div>
 </section>
 <script>
-var fc={"2026-05-01":{"104":{r:"ATL→LHR",t:8549.55},"110":{r:"ATL→MAN",t:6097.81}},"2026-05-02":{"104":{r:"ATL→LHR",t:7696.54},"110":{r:"ATL→MAN",t:5747.35}},"2026-05-03":{"104":{r:"ATL→LHR",t:8390.95},"110":{r:"ATL→MAN",t:6279.28}},"2026-05-04":{"104":{r:"ATL→LHR",t:8300.94},"110":{r:"ATL→MAN",t:6396.47}},"2026-05-05":{"104":{r:"ATL→LHR",t:7652.39},"110":{r:"ATL→MAN",t:6132.13}},"2026-05-06":{"104":{r:"ATL→LHR",t:7356.35},"110":{r:"ATL→MAN",t:5658.77}},"2026-05-07":{"104":{r:"ATL→LHR",t:7721.96},"110":{r:"ATL→MAN",t:5991.99}},"2026-05-08":{"104":{r:"ATL→LHR",t:8131.25},"110":{r:"ATL→MAN",t:6033.51}},"2026-05-09":{"104":{r:"ATL→LHR",t:8219.44},"110":{r:"ATL→MAN",t:6430.59}},"2026-05-10":{"104":{r:"ATL→LHR",t:8233.10},"110":{r:"ATL→MAN",t:6047.14}}};
+var fc={"2026-05-01":{"104":{r:"ATL-LHR",t:8549.55},"110":{r:"ATL-MAN",t:6097.81}},"2026-05-02":{"104":{r:"ATL-LHR",t:7696.54},"110":{r:"ATL-MAN",t:5747.35}},"2026-05-03":{"104":{r:"ATL-LHR",t:8390.95},"110":{r:"ATL-MAN",t:6279.28}},"2026-05-04":{"104":{r:"ATL-LHR",t:8300.94},"110":{r:"ATL-MAN",t:6396.47}},"2026-05-05":{"104":{r:"ATL-LHR",t:7652.39},"110":{r:"ATL-MAN",t:6132.13}},"2026-05-06":{"104":{r:"ATL-LHR",t:7356.35},"110":{r:"ATL-MAN",t:5658.77}},"2026-05-07":{"104":{r:"ATL-LHR",t:7721.96},"110":{r:"ATL-MAN",t:5991.99}},"2026-05-08":{"104":{r:"ATL-LHR",t:8131.25},"110":{r:"ATL-MAN",t:6033.51}},"2026-05-09":{"104":{r:"ATL-LHR",t:8219.44},"110":{r:"ATL-MAN",t:6430.59}},"2026-05-10":{"104":{r:"ATL-LHR",t:8233.10},"110":{r:"ATL-MAN",t:6047.14}}};
 var mc={"2026-05-01":{"104":4,"110":4},"2026-05-02":{"104":4,"110":4},"2026-05-03":{"104":4,"110":2},"2026-05-04":{"104":4,"110":4},"2026-05-05":{"104":4,"110":2},"2026-05-06":{"104":4,"110":2},"2026-05-07":{"104":4,"110":4},"2026-05-08":{"104":4,"110":4},"2026-05-09":{"104":4,"110":4},"2026-05-10":{"104":4,"110":4}};
-function fmt(n){return'$'+n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});}
-function fdate(d){return new Date(d+'T12:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});}
-var tbody=document.getElementById('finBody'),tfoot=document.getElementById('finFoot'),kpis=document.getElementById('fin-kpis');
-var rows='',gt=0,t104=0,t110=0,tm=0,cl=[],c4=[],c10=[];
+function fmt(n){return "$"+n.toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2});}
+function fdate(d){return new Date(d+"T12:00:00").toLocaleDateString("en-US",{month:"short",day:"numeric",year:"numeric"});}
+var tbody=document.getElementById("finBody"),tfoot=document.getElementById("finFoot"),kpis=document.getElementById("fin-kpis");
+var rows="",gt=0,t104=0,t110=0,tm=0,cl=[],c4=[],c10=[];
 Object.keys(fc).sort().forEach(function(d){
-  ['104','110'].forEach(function(f){
-    var v=fc[d][f],m=(mc[d]||{})[f]||'--',cpm=(typeof m==='number')?fmt(v.t/m):'--';
-    gt+=v.t;if(f==='104')t104+=v.t;else t110+=v.t;if(typeof m==='number')tm+=m;
-    rows+='<tr style="border-bottom:1px solid rgba(255,255,255,0.04);" onmouseover="this.style.background='rgba(255,255,255,0.03)'" onmouseout="this.style.background=''">'
-      +'<td style="padding:9px 14px;">'+fdate(d)+'</td>'
-      +'<td style="padding:9px 14px;"><span style="font-family:monospace;background:rgba(96,165,250,0.15);color:#60a5fa;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600;">V'+f+'</span></td>'
-      +'<td style="padding:9px 14px;opacity:0.65;">'+v.r+'</td>'
-      +'<td style="padding:9px 14px;text-align:right;">'+fmt(v.t)+'</td>'
-      +'<td style="padding:9px 14px;text-align:center;opacity:0.65;">'+m+'</td>'
-      +'<td style="padding:9px 14px;text-align:right;color:'+(typeof m==='number'?'#34d399':'inherit')+';">'+cpm+'</td>'
-      +'</tr>';
+  ["104","110"].forEach(function(f){
+    var v=fc[d][f],m=(mc[d]||{})[f]||"--",cpm=(typeof m==="number")?fmt(v.t/m):"--";
+    gt+=v.t; if(f==="104")t104+=v.t; else t110+=v.t; if(typeof m==="number")tm+=m;
+    rows+="<tr style='border-bottom:1px solid rgba(255,255,255,0.04);'><td style='padding:9px 14px;'>"+fdate(d)+"</td><td style='padding:9px 14px;'><span style='font-family:monospace;background:rgba(96,165,250,0.15);color:#60a5fa;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600;'>V"+f+"</span></td><td style='padding:9px 14px;opacity:0.65;'>"+v.r+"</td><td style='padding:9px 14px;text-align:right;'>"+fmt(v.t)+"</td><td style='padding:9px 14px;text-align:center;opacity:0.65;'>"+m+"</td><td style='padding:9px 14px;text-align:right;color:"+(typeof m==="number"?"#34d399":"inherit")+";'>"+cpm+"</td></tr>";
   });
-  cl.push(fdate(d).replace(', 2026',''));c4.push(fc[d]['104'].t);c10.push(fc[d]['110'].t);
+  cl.push(fdate(d).replace(", 2026","")); c4.push(fc[d]["104"].t); c10.push(fc[d]["110"].t);
 });
 tbody.innerHTML=rows;
-tfoot.innerHTML='<tr style="background:rgba(255,255,255,0.06);font-weight:600;border-top:2px solid rgba(255,255,255,0.1);">'
-  +'<td style="padding:10px 14px;" colspan="3">Total — May 1–10, 2026</td>'
-  +'<td style="padding:10px 14px;text-align:right;color:#60a5fa;">'+fmt(gt)+'</td>'
-  +'<td style="padding:10px 14px;text-align:center;opacity:0.65;">'+tm+'</td>'
-  +'<td style="padding:10px 14px;text-align:right;color:#60a5fa;">'+fmt(gt/tm)+'</td>'
-  +'</tr>';
-kpis.innerHTML=''
-  +'<div class="kpi"><div class="label">Total Food Cost</div><div class="value">'+fmt(gt)+'</div><div class="delta">May 1–10, 2026</div></div>'
-  +'<div class="kpi"><div class="label">V104 · ATL→LHR</div><div class="value">'+fmt(t104)+'</div><div class="delta">10 departures</div></div>'
-  +'<div class="kpi"><div class="label">V110 · ATL→MAN</div><div class="value">'+fmt(t110)+'</div><div class="delta">10 departures</div></div>'
-  +'<div class="kpi"><div class="label">Avg Cost / Mission</div><div class="value">'+fmt(gt/tm)+'</div><div class="delta">'+tm+' missions linked</div></div>';
-new Chart(document.getElementById('cFoodCost'),{type:'bar',data:{labels:cl,datasets:[
-  {label:'V104 ATL→LHR',data:c4,backgroundColor:'rgba(96,165,250,0.75)',borderRadius:4},
-  {label:'V110 ATL→MAN',data:c10,backgroundColor:'rgba(52,211,153,0.75)',borderRadius:4}
-]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#94a3b8'}},tooltip:{callbacks:{label:function(c){return c.dataset.label+': $'+c.raw.toLocaleString('en-US',{minimumFractionDigits:2});}}}},scales:{x:{ticks:{color:'#64748b'},grid:{color:'rgba(255,255,255,0.05)'}},y:{ticks:{color:'#64748b',callback:function(v){return'$'+v.toLocaleString();}},grid:{color:'rgba(255,255,255,0.05)'}}}}});
+tfoot.innerHTML="<tr style='background:rgba(255,255,255,0.06);font-weight:600;border-top:2px solid rgba(255,255,255,0.1);'><td style='padding:10px 14px;' colspan='3'>Total - May 1 to 10, 2026</td><td style='padding:10px 14px;text-align:right;color:#60a5fa;'>"+fmt(gt)+"</td><td style='padding:10px 14px;text-align:center;opacity:0.65;'>"+tm+"</td><td style='padding:10px 14px;text-align:right;color:#60a5fa;'>"+fmt(gt/tm)+"</td></tr>";
+kpis.innerHTML="<div class='kpi'><div class='label'>Total Food Cost</div><div class='value'>"+fmt(gt)+"</div><div class='delta'>May 1-10, 2026</div></div><div class='kpi'><div class='label'>V104 ATL-LHR</div><div class='value'>"+fmt(t104)+"</div><div class='delta'>10 departures</div></div><div class='kpi'><div class='label'>V110 ATL-MAN</div><div class='value'>"+fmt(t110)+"</div><div class='delta'>10 departures</div></div><div class='kpi'><div class='label'>Avg Cost / Mission</div><div class='value'>"+fmt(gt/tm)+"</div><div class='delta'>"+tm+" missions linked</div></div>";
+new Chart(document.getElementById("cFoodCost"),{type:"bar",data:{labels:cl,datasets:[{label:"V104 ATL-LHR",data:c4,backgroundColor:"rgba(96,165,250,0.75)",borderRadius:4},{label:"V110 ATL-MAN",data:c10,backgroundColor:"rgba(52,211,153,0.75)",borderRadius:4}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:"#94a3b8"}},tooltip:{callbacks:{label:function(c){return c.dataset.label+": $"+c.raw.toLocaleString("en-US",{minimumFractionDigits:2});}}}},scales:{x:{ticks:{color:"#64748b"},grid:{color:"rgba(255,255,255,0.05)"}},y:{ticks:{color:"#64748b",callback:function(v){return "$"+v.toLocaleString();}},grid:{color:"rgba(255,255,255,0.05)"}}}}});
 </script>
 </body>
 </html>
