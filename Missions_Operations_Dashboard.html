@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<title>Mainline Aviation ÃÂ· Sullivan Rd Missions Dashboard</title>
+<title>Mainline Aviation ÃÂÃÂ· Sullivan Rd Missions Dashboard</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.js" integrity="sha384-iU8HYtnGQ8Cy4zl7gbNMOhsDTTKX02BTXptVP/vqAWIaTfM7isw76iyZCsjL2eVi" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/gridjs@5.0.2/dist/gridjs.umd.js" integrity="sha384-/XXDzxe4FsGiAe50i/u9pY/Vy/uX654MHB1xoc1BJNnH1WXHhqHga9g3q5tF4gj7" crossorigin="anonymous"></script>
 <style>
@@ -366,7 +366,7 @@ body.wall .wall-banner .pulse {
   border-radius: 2px;
   pointer-events: none;
 }
-/* Mission colors Ã¢ÂÂ applied to lane-label and lane-accent via inline style */
+/* Mission colors ÃÂ¢ÃÂÃÂ applied to lane-label and lane-accent via inline style */
 .tl-times .lbl.m1 .ev, .tl-bar.multi .lane-label.m1 { color: #22d3ee; }
 .tl-times .lbl.m2 .ev, .tl-bar.multi .lane-label.m2 { color: #a78bfa; }
 .tl-times .lbl.m3 .ev, .tl-bar.multi .lane-label.m3 { color: #4ade80; }
@@ -577,7 +577,7 @@ body.wall .wall-banner .pulse {
     <label>Asset Type</label>
     <select id="fAsset"><option value="">All</option></select>
     <button class="reset" id="resetBtn">Reset</button>
-    <span class="badge" id="countBadge">Ã¢ÂÂ missions</span>
+    <span class="badge" id="countBadge">ÃÂ¢ÃÂÃÂ missions</span>
   </section>
 
   <div class="tab-panel active" id="panel-overview">
@@ -592,7 +592,7 @@ body.wall .wall-banner .pulse {
     <div class="section-title">Volume</div>
     <section class="grid grid-1">
       <div class="card">
-        <h3>Mission Volume by Hour <span class="hint">when work began ÃÂ· EDT</span></h3>
+        <h3>Mission Volume by Hour <span class="hint">when work began ÃÂÃÂ· EDT</span></h3>
         <div class="card-chart"><canvas id="cHour"></canvas></div>
       </div>
     </section>
@@ -615,7 +615,7 @@ body.wall .wall-banner .pulse {
     <div class="section-title">Mission Count by Team Lead</div>
     <section class="grid grid-1">
       <div class="card">
-        <h3>Total missions per lead <span class="hint">in current filter ÃÂ· sorted most-active first</span></h3>
+        <h3>Total missions per lead <span class="hint">in current filter ÃÂÃÂ· sorted most-active first</span></h3>
         <div class="card-chart xtall"><canvas id="cMissionCount"></canvas></div>
       </div>
     </section>
@@ -623,21 +623,21 @@ body.wall .wall-banner .pulse {
     <div class="section-title">Avg Intra-Shift Transit Gap</div>
     <section class="grid grid-1">
       <div class="card">
-        <h3>Prior Mission Completed Ã¢ÂÂ Next Team Arrival <span class="hint">intra-shift only ÃÂ· sorted fastest first</span></h3>
+        <h3>Prior Mission Completed ÃÂ¢ÃÂÃÂ Next Team Arrival <span class="hint">intra-shift only ÃÂÃÂ· sorted fastest first</span></h3>
         <div class="card-chart xtall"><canvas id="cTransit"></canvas></div>
       </div>
     </section>
     <div class="section-title">Avg Response Time</div>
     <section class="grid grid-1">
       <div class="card">
-        <h3>Mission Accepted Ã¢ÂÂ Team Arrival <span class="hint">engagement > 0%</span></h3>
+        <h3>Mission Accepted ÃÂ¢ÃÂÃÂ Team Arrival <span class="hint">engagement > 0%</span></h3>
         <div class="card-chart xtall"><canvas id="cResponse"></canvas></div>
       </div>
     </section>
     <div class="section-title">Avg Productivity</div>
     <section class="grid grid-1">
       <div class="card">
-        <h3>Per-Lead Productivity Score <span class="hint">Ã¢ÂÂ¥5 missions ÃÂ· 100% target</span></h3>
+        <h3>Per-Lead Productivity Score <span class="hint">ÃÂ¢ÃÂÃÂ¥5 missions ÃÂÃÂ· 100% target</span></h3>
         <div class="card-chart xtall"><canvas id="cTeamLead"></canvas></div>
       </div>
     </section>
@@ -652,7 +652,7 @@ body.wall .wall-banner .pulse {
   </div>
 
     <div class="tab-panel" id="panel-timeline">
-    <div class="section-title">Mission Timeline ÃÂ· most recent first</div>
+    <div class="section-title">Mission Timeline ÃÂÃÂ· most recent first</div>
 
     <section class="card" style="padding: 12px 16px; margin-bottom: 14px; display: flex; align-items: center; gap: 12px;">
       <span style="font-family: var(--mono); font-size: 11px; color: var(--text-3); text-transform: uppercase; letter-spacing: 0.04em;">View:</span>
@@ -664,17 +664,17 @@ body.wall .wall-banner .pulse {
 
     <section class="card" style="padding: 14px 18px; margin-bottom: 14px;">
       <div class="timeline-legend">
-        <span class="tl-seg delayed"></span><span>Flight late Ã¢ÂÂ scheduled vs actual arrival gap</span>
-        <span class="tl-seg pre"></span><span>Pre-acceptance Ã¢ÂÂ flight on ground, mission waiting</span>
-        <span class="tl-seg drive"></span><span>Response Ã¢ÂÂ accepted Ã¢ÂÂ team driving to gate</span>
-        <span class="tl-seg setup"></span><span>Setup Ã¢ÂÂ team arrived Ã¢ÂÂ starting work</span>
-        <span class="tl-seg active"></span><span>Active mission Ã¢ÂÂ in progress</span>
-        <span class="tl-seg buffer"></span><span>Buffer Ã¢ÂÂ completed Ã¢ÂÂ flight departure</span>
+        <span class="tl-seg delayed"></span><span>Flight late ÃÂ¢ÃÂÃÂ scheduled vs actual arrival gap</span>
+        <span class="tl-seg pre"></span><span>Pre-acceptance ÃÂ¢ÃÂÃÂ flight on ground, mission waiting</span>
+        <span class="tl-seg drive"></span><span>Response ÃÂ¢ÃÂÃÂ accepted ÃÂ¢ÃÂÃÂ team driving to gate</span>
+        <span class="tl-seg setup"></span><span>Setup ÃÂ¢ÃÂÃÂ team arrived ÃÂ¢ÃÂÃÂ starting work</span>
+        <span class="tl-seg active"></span><span>Active mission ÃÂ¢ÃÂÃÂ in progress</span>
+        <span class="tl-seg buffer"></span><span>Buffer ÃÂ¢ÃÂÃÂ completed ÃÂ¢ÃÂÃÂ flight departure</span>
       </div>
     </section>
 
     <section class="card" style="padding: 16px 18px;">
-      <h3>Timeline rows <span class="hint">each row spans Scheduled/Actual Arrival Ã¢ÂÂ Flight Departure ÃÂ· hover for details</span></h3>
+      <h3>Timeline rows <span class="hint">each row spans Scheduled/Actual Arrival ÃÂ¢ÃÂÃÂ Flight Departure ÃÂÃÂ· hover for details</span></h3>
       <div id="timelineList"></div>
       <div id="timelineMore" class="timeline-more"></div>
     </section>
@@ -683,12 +683,12 @@ body.wall .wall-banner .pulse {
   <div class="tab-panel" id="panel-missions">
     <div class="section-title">Mission Detail</div>
     <section class="table-card">
-      <h3>All Missions <span class="hint" style="font-weight:400;color:var(--text-3)">Ã¢ÂÂ click any column header to sort ÃÂ· search to filter further</span></h3>
+      <h3>All Missions <span class="hint" style="font-weight:400;color:var(--text-3)">ÃÂ¢ÃÂÃÂ click any column header to sort ÃÂÃÂ· search to filter further</span></h3>
       <div id="tbl"></div>
     </section>
   </div>
 
-  <footer>Mainline Aviation ÃÂ· ATL Operations</footer>
+  <footer>Mainline Aviation ÃÂÃÂ· ATL Operations</footer>
 </div>
 
 <script>
@@ -706,9 +706,9 @@ const PALETTE = {
   continuity: { intra: "#22d3ee", shift_break: "#94a3b8", overlap: "#f87171", skipped: "#fbbf24", first: "#a78bfa" },
 };
 
-function fmtPct(v, d=0) { return v == null ? "Ã¢ÂÂ" : v.toFixed(d) + "%"; }
-function fmtMin(v, d=0) { return v == null ? "Ã¢ÂÂ" : v.toFixed(d) + " min"; }
-function fmtNum(v) { return v == null ? "Ã¢ÂÂ" : v.toLocaleString(); }
+function fmtPct(v, d=0) { return v == null ? "ÃÂ¢ÃÂÃÂ" : v.toFixed(d) + "%"; }
+function fmtMin(v, d=0) { return v == null ? "ÃÂ¢ÃÂÃÂ" : v.toFixed(d) + " min"; }
+function fmtNum(v) { return v == null ? "ÃÂ¢ÃÂÃÂ" : v.toLocaleString(); }
 function uniqueSorted(arr) { return [...new Set(arr)].filter(Boolean).sort(); }
 function avg(arr) { const v = arr.filter(x => x != null); return v.length ? v.reduce((a,b)=>a+b,0)/v.length : null; }
 function median(arr) {
@@ -782,10 +782,10 @@ function renderKpis(rows) {
     return v>=hi ? "good" : (v<lo ? "bad" : "warn");
   };
   const kpis = [
-    { label: "Total Missions", value: fmtNum(total), delta: proper + " proper ÃÂ· " + (total-proper) + " skipped" },
+    { label: "Total Missions", value: fmtNum(total), delta: proper + " proper ÃÂÃÂ· " + (total-proper) + " skipped" },
     { label: "On-Time Rate",   value: fmtPct(onTime,1), delta: lateCount + " late completions", cls: cls(onTime, 95, 85) },
     { label: "Avg Response",   value: fmtMin(respAvg,1), delta: "median " + fmtMin(respMed,0), cls: cls(respAvg, 60, 100, true) },
-    { label: "Avg Intra-Shift Transit", value: fmtMin(transitAvg,1), delta: "median " + fmtMin(transitMed,0) + " ÃÂ· n=" + intraRows.length, cls: cls(transitAvg, 15, 30, true) },
+    { label: "Avg Intra-Shift Transit", value: fmtMin(transitAvg,1), delta: "median " + fmtMin(transitMed,0) + " ÃÂÃÂ· n=" + intraRows.length, cls: cls(transitAvg, 15, 30, true) },
     { label: "Avg Productivity", value: fmtPct(prod,1), delta: "vs. 100% target", cls: cls(prod, 100, 70) },
     { label: "Avg Engagement",   value: fmtPct(eng,1), delta: "team participation", cls: cls(eng, 95, 80) },
   ];
@@ -795,7 +795,7 @@ function renderKpis(rows) {
        <div class="value">${k.value}</div>
        <div class="delta">${k.delta||""}</div>
      </div>`).join("");
-  document.getElementById("countBadge").textContent = "Ã¢ÂÂ " + fmtNum(total) + " missions";
+  document.getElementById("countBadge").textContent = "ÃÂ¢ÃÂÃÂ " + fmtNum(total) + " missions";
 }
 
 function renderLeaderboard(rows) {
@@ -817,19 +817,19 @@ function renderLeaderboard(rows) {
   cards.sort((a,b) => (b.prod ?? -1) - (a.prod ?? -1));
   const html = cards.slice(0, 12).map((c, i) => {
     const rankClass = i < 3 ? "top" : "";
-    const medal = i === 0 ? "Ã¢ÂÂ" : (i === 1 ? "Ã¢ÂÂ¦" : (i === 2 ? "Ã¢ÂÂ§" : "#" + (i+1)));
+    const medal = i === 0 ? "ÃÂ¢ÃÂÃÂ" : (i === 1 ? "ÃÂ¢ÃÂÃÂ¦" : (i === 2 ? "ÃÂ¢ÃÂÃÂ§" : "#" + (i+1)));
     return `<div class="leader">
       <div class="rank ${rankClass}">${medal} ${i < 3 ? ["GOLD","SILVER","BRONZE"][i] : "RANK " + (i+1)}</div>
       <div class="name">${c.name}</div>
       <div class="stats">
         <span>Prod <b>${fmtPct(c.prod,0)}</b></span>
         <span>Resp <b>${fmtMin(c.resp,0)}</b></span>
-        <span>Transit <b>${c.transit != null ? Math.round(c.transit) + "m" : "Ã¢ÂÂ"}</b></span>
+        <span>Transit <b>${c.transit != null ? Math.round(c.transit) + "m" : "ÃÂ¢ÃÂÃÂ"}</b></span>
         <span>Missions <b>${c.n}</b></span>
       </div>
     </div>`;
   }).join("");
-  document.getElementById("leaderboard").innerHTML = html || `<div class="leader"><div class="name" style="color:var(--text-3)">No leads with Ã¢ÂÂ¥5 missions in this filter</div></div>`;
+  document.getElementById("leaderboard").innerHTML = html || `<div class="leader"><div class="name" style="color:var(--text-3)">No leads with ÃÂ¢ÃÂÃÂ¥5 missions in this filter</div></div>`;
 }
 
 const charts = {};
@@ -1010,12 +1010,12 @@ function renderCharts(rows) {
   const transitByLead = makeAvg(intraOnly, "tl", "transit").filter(e => e[2] >= 3).sort((a,b) => a[1] - b[1]);
   bar("cTransit",
     transitByLead.map(e => [e[0], +e[1].toFixed(1)]),
-    { horizontal: true, label: "Avg transit", suffix: " min", color: PALETTE.cyan, counts: transitByLead.map(e => e[2]), xtitle: "Avg minutes (prior completed Ã¢ÂÂ next arrival)" });
+    { horizontal: true, label: "Avg transit", suffix: " min", color: PALETTE.cyan, counts: transitByLead.map(e => e[2]), xtitle: "Avg minutes (prior completed ÃÂ¢ÃÂÃÂ next arrival)" });
 
   const respLead = makeAvg(rows, "tl", "resp").filter(e => e[2] >= 5).sort((a,b) => a[1] - b[1]);
   bar("cResponse",
     respLead.map(e => [e[0], +e[1].toFixed(1)]),
-    { horizontal: true, label: "Avg Response", suffix: " min", color: PALETTE.purple, counts: respLead.map(e => e[2]), xtitle: "Avg minutes (accepted Ã¢ÂÂ team arrival)" });
+    { horizontal: true, label: "Avg Response", suffix: " min", color: PALETTE.purple, counts: respLead.map(e => e[2]), xtitle: "Avg minutes (accepted ÃÂ¢ÃÂÃÂ team arrival)" });
 
   const tl = makeAvg(rows, "tl", "prod").filter(e => e[2] >= 5);
   bar("cTeamLead",
@@ -1036,13 +1036,13 @@ function parseSpringshotTs(s) {
   return new Date(year, monthIdx, parseInt(m[2]), parseInt(m[3]), parseInt(m[4])).getTime();
 }
 function fmtDur(min) {
-  if (min == null) return "Ã¢ÂÂ";
+  if (min == null) return "ÃÂ¢ÃÂÃÂ";
   if (min < 60) return Math.round(min) + "m";
   const h = Math.floor(min/60), mm = Math.round(min%60);
   return h + "h " + (mm < 10 ? "0" + mm : mm) + "m";
 }
 function fmtClock(s) {
-  if (!s) return "Ã¢ÂÂ";
+  if (!s) return "ÃÂ¢ÃÂÃÂ";
   const m = s.match(/^(\w+ \d+), (\d+:\d+)/);
   return m ? m[1] + " " + m[2] : s;
 }
@@ -1244,24 +1244,24 @@ function renderTimelinePerMission(TL, list, more) {
 
 let grid = null;
 function transitDisplay(r) {
-  if (r.transit_kind === "skipped") return "Ã¢ÂÂ (skipped)";
-  if (r.transit_kind === "first") return "Ã¢ÂÂ (first)";
-  if (r.transit == null) return "Ã¢ÂÂ";
-  if (r.transit_kind === "overlap") return r.transit.toFixed(0) + "m Ã¢ÂÂ ";
+  if (r.transit_kind === "skipped") return "ÃÂ¢ÃÂÃÂ (skipped)";
+  if (r.transit_kind === "first") return "ÃÂ¢ÃÂÃÂ (first)";
+  if (r.transit == null) return "ÃÂ¢ÃÂÃÂ";
+  if (r.transit_kind === "overlap") return r.transit.toFixed(0) + "m ÃÂ¢ÃÂÃÂ ";
   if (r.transit_kind === "shift_break") return Math.round(r.transit) + "m (break)";
   if (r.transit_kind === "intra") return r.transit.toFixed(0) + "m";
-  return "Ã¢ÂÂ";
+  return "ÃÂ¢ÃÂÃÂ";
 }
 function renderTable(rows) {
   const data = rows.map(r => [
     r.tl, r.al, r.mt, r.atype, r.ast, r.loc,
     r.proper ? "Yes" : "No",
-    r.eng != null ? r.eng + "%" : "Ã¢ÂÂ",
-    r.prod != null ? r.prod + "%" : "Ã¢ÂÂ",
-    r.resp != null ? r.resp.toFixed(0) + "m" : "Ã¢ÂÂ",
-    r.dur != null ? r.dur.toFixed(0) + "m" : "Ã¢ÂÂ",
+    r.eng != null ? r.eng + "%" : "ÃÂ¢ÃÂÃÂ",
+    r.prod != null ? r.prod + "%" : "ÃÂ¢ÃÂÃÂ",
+    r.resp != null ? r.resp.toFixed(0) + "m" : "ÃÂ¢ÃÂÃÂ",
+    r.dur != null ? r.dur.toFixed(0) + "m" : "ÃÂ¢ÃÂÃÂ",
     transitDisplay(r),
-    r.ot == null ? "Ã¢ÂÂ" : (r.ot ? "On time" : "Late"),
+    r.ot == null ? "ÃÂ¢ÃÂÃÂ" : (r.ot ? "On time" : "Late"),
     r.ma, r.tarr, r.ms, r.mc, r.fd, r.inb, r.outb,
   ]);
   const target = document.getElementById("tbl");
@@ -1290,7 +1290,7 @@ function switchTab(name) {
   // proper dimensions now that they're visible.
   setTimeout(() => {
     Object.values(charts).forEach(c => { try { c.resize(); } catch (e) {} });
-    // For tabs whose charts may have rendered at 0ÃÂ0, re-run the full render
+    // For tabs whose charts may have rendered at 0ÃÂÃÂ0, re-run the full render
     // pass once visible. Cheap (in-memory) and guarantees correct sizing.
     rerenderAll();
   }, 50);
@@ -1369,7 +1369,7 @@ function init() {
     // Add a small "watching for new data" indicator at the bottom-right
     const banner = document.createElement("div");
     banner.className = "wall-banner";
-    banner.innerHTML = '<span class="pulse"></span><span>LIVE ÃÂ· checking for new data every ' + _refreshSec + 's ÃÂ· <span id="wall-stamp"></span></span>';
+    banner.innerHTML = '<span class="pulse"></span><span>LIVE ÃÂÃÂ· checking for new data every ' + _refreshSec + 's ÃÂÃÂ· <span id="wall-stamp"></span></span>';
     document.body.appendChild(banner);
     document.getElementById("wall-stamp").textContent = SNAPSHOT_TIME;
 
@@ -1383,7 +1383,7 @@ function init() {
         if (m && m[1] !== SNAPSHOT_TIME) {
           location.reload();
         }
-      } catch (e) { /* network blip Ã¢ÂÂ ignore, keep showing current data */ }
+      } catch (e) { /* network blip ÃÂ¢ÃÂÃÂ ignore, keep showing current data */ }
     }, _refreshSec * 1000);
   }
 }
@@ -1392,65 +1392,7 @@ document.addEventListener("DOMContentLoaded", init);
 </body>
 
 
-  <div class="panel" id="panel-financing">
-    <section class="kpis" id="fin-kpis"></section>
-    <div class="section-title">Food Cost by Flight â May 2026</div>
-    <section class="grid grid-1">
-      <div class="card">
-        <h3>Daily Food Cost <span class="hint">USD Â· supplier invoice incl. tax</span></h3>
-        <div class="card-chart tall"><canvas id="cFoodCost"></canvas></div>
-      </div>
-    </section>
-    <div class="section-title">Cost Breakdown by Mission</div>
-    <section class="grid grid-1">
-      <div class="card" style="padding:0;overflow:hidden;">
-        <table id="finTable" style="width:100%;border-collapse:collapse;font-size:13px;">
-          <thead>
-            <tr style="background:rgba(255,255,255,0.05);text-align:left;">
-              <th style="padding:10px 14px;color:var(--text-muted);font-weight:600;border-bottom:1px solid rgba(255,255,255,0.07);">Date</th>
-              <th style="padding:10px 14px;color:var(--text-muted);font-weight:600;border-bottom:1px solid rgba(255,255,255,0.07);">Flight</th>
-              <th style="padding:10px 14px;color:var(--text-muted);font-weight:600;border-bottom:1px solid rgba(255,255,255,0.07);">Route</th>
-              <th style="padding:10px 14px;color:var(--text-muted);font-weight:600;border-bottom:1px solid rgba(255,255,255,0.07);text-align:right;">Food Cost</th>
-              <th style="padding:10px 14px;color:var(--text-muted);font-weight:600;border-bottom:1px solid rgba(255,255,255,0.07);text-align:center;">Missions</th>
-              <th style="padding:10px 14px;color:var(--text-muted);font-weight:600;border-bottom:1px solid rgba(255,255,255,0.07);text-align:right;">Cost / Mission</th>
-            </tr>
-          </thead>
-          <tbody id="finTableBody"></tbody>
-          <tfoot id="finTableFoot"></tfoot>
-        </table>
-      </div>
-    </section>
-  </div>
-  <script id="fin-script">
-  (function(){
-    const foodCosts={"2026-05-01":{"104":{route:"ATLâLHR",total:8549.55},"110":{route:"ATLâMAN",total:6097.81}},"2026-05-02":{"104":{route:"ATLâLHR",total:7696.54},"110":{route:"ATLâMAN",total:5747.35}},"2026-05-03":{"104":{route:"ATLâLHR",total:8390.95},"110":{route:"ATLâMAN",total:6279.28}},"2026-05-04":{"104":{route:"ATLâLHR",total:8300.94},"110":{route:"ATLâMAN",total:6396.47}},"2026-05-05":{"104":{route:"ATLâLHR",total:7652.39},"110":{route:"ATLâMAN",total:6132.13}},"2026-05-06":{"104":{route:"ATLâLHR",total:7356.35},"110":{route:"ATLâMAN",total:5658.77}},"2026-05-07":{"104":{route:"ATLâLHR",total:7721.96},"110":{route:"ATLâMAN",total:5991.99}},"2026-05-08":{"104":{route:"ATLâLHR",total:8131.25},"110":{route:"ATLâMAN",total:6033.51}},"2026-05-09":{"104":{route:"ATLâLHR",total:8219.44},"110":{route:"ATLâMAN",total:6430.59}},"2026-05-10":{"104":{route:"ATLâLHR",total:8233.10},"110":{route:"ATLâMAN",total:6047.14}}};
-    const missionCounts={"2026-05-01":{"104":4,"110":4},"2026-05-02":{"104":4,"110":4},"2026-05-03":{"104":4,"110":2},"2026-05-04":{"104":4,"110":4},"2026-05-05":{"104":4,"110":2},"2026-05-06":{"104":4,"110":2},"2026-05-07":{"104":4,"110":4},"2026-05-08":{"104":4,"110":4},"2026-05-09":{"104":4,"110":4},"2026-05-10":{"104":4,"110":4}};
-    function fmt(n){return ' style="position:fixed;inset:0;z-index:9999;background:#0b0f1a;display:flex;align-items:center;justify-content:center;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
-  <div style="background:#131929;border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:48px 44px;width:380px;max-width:90vw;text-align:center;box-shadow:0 24px 60px rgba(0,0,0,0.6);">
-    <div style="width:52px;height:52px;background:#1e3a5f;border-radius:12px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:20px;font-weight:700;color:#60a5fa;letter-spacing:-0.02em;">MA</div>
-    <div style="font-size:11px;text-transform:uppercase;letter-spacing:0.2em;color:#64748b;font-weight:600;margin-bottom:6px;">Mainline Aviation</div>
-    <div style="font-size:17px;font-weight:600;color:#e2e8f0;margin-bottom:36px;">Sullivan Rd Missions Dashboard</div>
-    <input type="password" id="pw-input" placeholder="Password" autofocus style="width:100%;box-sizing:border-box;padding:13px 16px;background:#0b0f1a;border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:#e2e8f0;font-size:15px;outline:none;margin-bottom:12px;" onkeydown="if(event.key==='Enter')doLogin()">
-    <button onclick="doLogin()" style="width:100%;padding:13px;background:#2563eb;border:none;border-radius:8px;color:#fff;font-size:15px;font-weight:600;cursor:pointer;" onmouseover="this.style.background='#1d4ed8'" onmouseout="this.style.background='#2563eb'">Access Dashboard</button>
-    <div id="pw-error" style="color:#f87171;font-size:13px;margin-top:12px;visibility:hidden;">Incorrect password Ã¢ÂÂ please try again.</div>
-  </div>
-</div>
-<script>
-(function(){if(sessionStorage.getItem('ma_dash_auth')==='1'){document.getElementById('login-overlay').style.display='none';}})();
-async function doLogin(){
-  const pw=document.getElementById('pw-input').value;
-  const buf=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(pw));
-  const hex=Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,'0')).join('');
-  if(hex==='976cde1020d3eaa062913df972c6e436e509109e2f68b4e0fea641dbc8595a18'){
-    sessionStorage.setItem('ma_dash_auth','1');
-    document.getElementById('login-overlay').style.display='none';
-  } else {
-    document.getElementById('pw-error').style.visibility='visible';
-    document.getElementById('pw-input').value='';
-    document.getElementById('pw-input').focus();
-  }
-}
-</script>
+  
 </body></html>+n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});}
     function fmtDate(d){const dt=new Date(d+'T12:00:00');return dt.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});}
     function renderFinancing(){
@@ -1460,8 +1402,8 @@ async function doLogin(){
       const chartLabels=[],chart104=[],chart110=[];
       Object.keys(foodCosts).sort().forEach(date=>{
         ['104','110'].forEach(flt=>{
-          const fc=foodCosts[date][flt],mc=(missionCounts[date]||{})[flt]||'â';
-          const cpm=(typeof mc==='number')?fmt(fc.total/mc):'â';
+          const fc=foodCosts[date][flt],mc=(missionCounts[date]||{})[flt]||'Ã¢ÂÂ';
+          const cpm=(typeof mc==='number')?fmt(fc.total/mc):'Ã¢ÂÂ';
           grandTotal+=fc.total;
           if(flt==='104')v104Total+=fc.total;else v110Total+=fc.total;
           if(typeof mc==='number')totalMissions+=mc;
@@ -1472,17 +1414,17 @@ async function doLogin(){
         chart110.push(foodCosts[date]['110'].total);
       });
       tbody.innerHTML=rows;
-      tfoot.innerHTML=`<tr style="background:rgba(255,255,255,0.04);font-weight:600;"><td style="padding:10px 14px;color:var(--text-main)" colspan="3">Total â May 1â10, 2026</td><td style="padding:10px 14px;text-align:right;color:#60a5fa">${fmt(grandTotal)}</td><td style="padding:10px 14px;text-align:center;color:var(--text-muted)">${totalMissions}</td><td style="padding:10px 14px;text-align:right;color:#60a5fa">${fmt(grandTotal/totalMissions)}</td></tr>`;
-      kpis.innerHTML=`<div class="kpi"><div class="kpi-label">Total Food Cost</div><div class="kpi-value">${fmt(grandTotal)}</div><div class="kpi-sub">May 1â10, 2026</div></div><div class="kpi"><div class="kpi-label">V104 Â· ATLâLHR</div><div class="kpi-value">${fmt(v104Total)}</div><div class="kpi-sub">10 departures</div></div><div class="kpi"><div class="kpi-label">V110 Â· ATLâMAN</div><div class="kpi-value">${fmt(v110Total)}</div><div class="kpi-sub">10 departures</div></div><div class="kpi"><div class="kpi-label">Avg Cost / Mission</div><div class="kpi-value">${fmt(grandTotal/totalMissions)}</div><div class="kpi-sub">${totalMissions} missions linked</div></div>`;
+      tfoot.innerHTML=`<tr style="background:rgba(255,255,255,0.04);font-weight:600;"><td style="padding:10px 14px;color:var(--text-main)" colspan="3">Total Ã¢ÂÂ May 1Ã¢ÂÂ10, 2026</td><td style="padding:10px 14px;text-align:right;color:#60a5fa">${fmt(grandTotal)}</td><td style="padding:10px 14px;text-align:center;color:var(--text-muted)">${totalMissions}</td><td style="padding:10px 14px;text-align:right;color:#60a5fa">${fmt(grandTotal/totalMissions)}</td></tr>`;
+      kpis.innerHTML=`<div class="kpi"><div class="kpi-label">Total Food Cost</div><div class="kpi-value">${fmt(grandTotal)}</div><div class="kpi-sub">May 1Ã¢ÂÂ10, 2026</div></div><div class="kpi"><div class="kpi-label">V104 ÃÂ· ATLÃ¢ÂÂLHR</div><div class="kpi-value">${fmt(v104Total)}</div><div class="kpi-sub">10 departures</div></div><div class="kpi"><div class="kpi-label">V110 ÃÂ· ATLÃ¢ÂÂMAN</div><div class="kpi-value">${fmt(v110Total)}</div><div class="kpi-sub">10 departures</div></div><div class="kpi"><div class="kpi-label">Avg Cost / Mission</div><div class="kpi-value">${fmt(grandTotal/totalMissions)}</div><div class="kpi-sub">${totalMissions} missions linked</div></div>`;
       const ctx=document.getElementById('cFoodCost');
-      if(ctx&&window.Chart){if(ctx._chart)ctx._chart.destroy();ctx._chart=new Chart(ctx,{type:'bar',data:{labels:chartLabels,datasets:[{label:'V104 ATLâLHR',data:chart104,backgroundColor:'rgba(96,165,250,0.7)',borderRadius:4},{label:'V110 ATLâMAN',data:chart110,backgroundColor:'rgba(52,211,153,0.7)',borderRadius:4}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#94a3b8'}},tooltip:{callbacks:{label:c=>c.dataset.label+':  style="position:fixed;inset:0;z-index:9999;background:#0b0f1a;display:flex;align-items:center;justify-content:center;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+      if(ctx&&window.Chart){if(ctx._chart)ctx._chart.destroy();ctx._chart=new Chart(ctx,{type:'bar',data:{labels:chartLabels,datasets:[{label:'V104 ATLÃ¢ÂÂLHR',data:chart104,backgroundColor:'rgba(96,165,250,0.7)',borderRadius:4},{label:'V110 ATLÃ¢ÂÂMAN',data:chart110,backgroundColor:'rgba(52,211,153,0.7)',borderRadius:4}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#94a3b8'}},tooltip:{callbacks:{label:c=>c.dataset.label+':  style="position:fixed;inset:0;z-index:9999;background:#0b0f1a;display:flex;align-items:center;justify-content:center;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
   <div style="background:#131929;border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:48px 44px;width:380px;max-width:90vw;text-align:center;box-shadow:0 24px 60px rgba(0,0,0,0.6);">
     <div style="width:52px;height:52px;background:#1e3a5f;border-radius:12px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:20px;font-weight:700;color:#60a5fa;letter-spacing:-0.02em;">MA</div>
     <div style="font-size:11px;text-transform:uppercase;letter-spacing:0.2em;color:#64748b;font-weight:600;margin-bottom:6px;">Mainline Aviation</div>
     <div style="font-size:17px;font-weight:600;color:#e2e8f0;margin-bottom:36px;">Sullivan Rd Missions Dashboard</div>
     <input type="password" id="pw-input" placeholder="Password" autofocus style="width:100%;box-sizing:border-box;padding:13px 16px;background:#0b0f1a;border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:#e2e8f0;font-size:15px;outline:none;margin-bottom:12px;" onkeydown="if(event.key==='Enter')doLogin()">
     <button onclick="doLogin()" style="width:100%;padding:13px;background:#2563eb;border:none;border-radius:8px;color:#fff;font-size:15px;font-weight:600;cursor:pointer;" onmouseover="this.style.background='#1d4ed8'" onmouseout="this.style.background='#2563eb'">Access Dashboard</button>
-    <div id="pw-error" style="color:#f87171;font-size:13px;margin-top:12px;visibility:hidden;">Incorrect password Ã¢ÂÂ please try again.</div>
+    <div id="pw-error" style="color:#f87171;font-size:13px;margin-top:12px;visibility:hidden;">Incorrect password ÃÂ¢ÃÂÃÂ please try again.</div>
   </div>
 </div>
 <script>
@@ -1508,7 +1450,7 @@ async function doLogin(){
     <div style="font-size:17px;font-weight:600;color:#e2e8f0;margin-bottom:36px;">Sullivan Rd Missions Dashboard</div>
     <input type="password" id="pw-input" placeholder="Password" autofocus style="width:100%;box-sizing:border-box;padding:13px 16px;background:#0b0f1a;border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:#e2e8f0;font-size:15px;outline:none;margin-bottom:12px;" onkeydown="if(event.key==='Enter')doLogin()">
     <button onclick="doLogin()" style="width:100%;padding:13px;background:#2563eb;border:none;border-radius:8px;color:#fff;font-size:15px;font-weight:600;cursor:pointer;" onmouseover="this.style.background='#1d4ed8'" onmouseout="this.style.background='#2563eb'">Access Dashboard</button>
-    <div id="pw-error" style="color:#f87171;font-size:13px;margin-top:12px;visibility:hidden;">Incorrect password Ã¢ÂÂ please try again.</div>
+    <div id="pw-error" style="color:#f87171;font-size:13px;margin-top:12px;visibility:hidden;">Incorrect password ÃÂ¢ÃÂÃÂ please try again.</div>
   </div>
 </div>
 <script>
@@ -1533,68 +1475,7 @@ async function doLogin(){
     if(document.readyState!=='loading')setTimeout(renderFinancing,200);
   })();
   </script>
-  <div class="tab-panel" id="panel-financing">
-    <section class="kpis" id="fin-kpis"></section>
-
-    <div class="section-title">Food Cost by Flight — May 2026</div>
-    <section class="grid grid-1">
-      <div class="card">
-        <h3>Daily Food Cost <span class="hint">USD · supplier invoice incl. tax</span></h3>
-        <div class="card-chart tall"><canvas id="cFoodCost"></canvas></div>
-      </div>
-    </section>
-
-    <div class="section-title">Cost Breakdown by Mission</div>
-    <section class="grid grid-1">
-      <div class="card" style="padding:0;overflow:hidden;">
-        <table id="finTable" style="width:100%;border-collapse:collapse;font-size:13px;">
-          <thead>
-            <tr style="background:rgba(255,255,255,0.05);text-align:left;">
-              <th style="padding:10px 14px;font-weight:600;border-bottom:1px solid rgba(255,255,255,0.07);">Date</th>
-              <th style="padding:10px 14px;font-weight:600;border-bottom:1px solid rgba(255,255,255,0.07);">Flight</th>
-              <th style="padding:10px 14px;font-weight:600;border-bottom:1px solid rgba(255,255,255,0.07);">Route</th>
-              <th style="padding:10px 14px;font-weight:600;border-bottom:1px solid rgba(255,255,255,0.07);text-align:right;">Food Cost</th>
-              <th style="padding:10px 14px;font-weight:600;border-bottom:1px solid rgba(255,255,255,0.07);text-align:center;">Missions</th>
-              <th style="padding:10px 14px;font-weight:600;border-bottom:1px solid rgba(255,255,255,0.07);text-align:right;">Cost / Mission</th>
-            </tr>
-          </thead>
-          <tbody id="finTableBody"></tbody>
-          <tfoot id="finTableFoot"></tfoot>
-        </table>
-      </div>
-    </section>
-  </div>
-
-  <script>
-  function renderFinancing(){
-    const foodCosts={"2026-05-01":{"104":{route:"ATL→LHR",total:8549.55},"110":{route:"ATL→MAN",total:6097.81}},"2026-05-02":{"104":{route:"ATL→LHR",total:7696.54},"110":{route:"ATL→MAN",total:5747.35}},"2026-05-03":{"104":{route:"ATL→LHR",total:8390.95},"110":{route:"ATL→MAN",total:6279.28}},"2026-05-04":{"104":{route:"ATL→LHR",total:8300.94},"110":{route:"ATL→MAN",total:6396.47}},"2026-05-05":{"104":{route:"ATL→LHR",total:7652.39},"110":{route:"ATL→MAN",total:6132.13}},"2026-05-06":{"104":{route:"ATL→LHR",total:7356.35},"110":{route:"ATL→MAN",total:5658.77}},"2026-05-07":{"104":{route:"ATL→LHR",total:7721.96},"110":{route:"ATL→MAN",total:5991.99}},"2026-05-08":{"104":{route:"ATL→LHR",total:8131.25},"110":{route:"ATL→MAN",total:6033.51}},"2026-05-09":{"104":{route:"ATL→LHR",total:8219.44},"110":{route:"ATL→MAN",total:6430.59}},"2026-05-10":{"104":{route:"ATL→LHR",total:8233.10},"110":{route:"ATL→MAN",total:6047.14}}};
-    const missionCounts={"2026-05-01":{"104":4,"110":4},"2026-05-02":{"104":4,"110":4},"2026-05-03":{"104":4,"110":2},"2026-05-04":{"104":4,"110":4},"2026-05-05":{"104":4,"110":2},"2026-05-06":{"104":4,"110":2},"2026-05-07":{"104":4,"110":4},"2026-05-08":{"104":4,"110":4},"2026-05-09":{"104":4,"110":4},"2026-05-10":{"104":4,"110":4}};
-    function fmt(n){return ' style="position:fixed;inset:0;z-index:9999;background:#0b0f1a;display:flex;align-items:center;justify-content:center;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
-  <div style="background:#131929;border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:48px 44px;width:380px;max-width:90vw;text-align:center;box-shadow:0 24px 60px rgba(0,0,0,0.6);">
-    <div style="width:52px;height:52px;background:#1e3a5f;border-radius:12px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:20px;font-weight:700;color:#60a5fa;letter-spacing:-0.02em;">MA</div>
-    <div style="font-size:11px;text-transform:uppercase;letter-spacing:0.2em;color:#64748b;font-weight:600;margin-bottom:6px;">Mainline Aviation</div>
-    <div style="font-size:17px;font-weight:600;color:#e2e8f0;margin-bottom:36px;">Sullivan Rd Missions Dashboard</div>
-    <input type="password" id="pw-input" placeholder="Password" autofocus style="width:100%;box-sizing:border-box;padding:13px 16px;background:#0b0f1a;border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:#e2e8f0;font-size:15px;outline:none;margin-bottom:12px;" onkeydown="if(event.key==='Enter')doLogin()">
-    <button onclick="doLogin()" style="width:100%;padding:13px;background:#2563eb;border:none;border-radius:8px;color:#fff;font-size:15px;font-weight:600;cursor:pointer;" onmouseover="this.style.background='#1d4ed8'" onmouseout="this.style.background='#2563eb'">Access Dashboard</button>
-    <div id="pw-error" style="color:#f87171;font-size:13px;margin-top:12px;visibility:hidden;">Incorrect password Ã¢ÂÂ please try again.</div>
-  </div>
-</div>
-<script>
-(function(){if(sessionStorage.getItem('ma_dash_auth')==='1'){document.getElementById('login-overlay').style.display='none';}})();
-async function doLogin(){
-  const pw=document.getElementById('pw-input').value;
-  const buf=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(pw));
-  const hex=Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,'0')).join('');
-  if(hex==='976cde1020d3eaa062913df972c6e436e509109e2f68b4e0fea641dbc8595a18'){
-    sessionStorage.setItem('ma_dash_auth','1');
-    document.getElementById('login-overlay').style.display='none';
-  } else {
-    document.getElementById('pw-error').style.visibility='visible';
-    document.getElementById('pw-input').value='';
-    document.getElementById('pw-input').focus();
-  }
-}
-</script>
+  
 </body></html>+n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});}
     function fmtDate(d){return new Date(d+'T12:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});}
     const tbody=document.getElementById('finTableBody'),tfoot=document.getElementById('finTableFoot'),kpis=document.getElementById('fin-kpis');
@@ -1622,27 +1503,27 @@ async function doLogin(){
     });
     tbody.innerHTML=rows;
     tfoot.innerHTML='<tr style="background:rgba(255,255,255,0.06);font-weight:600;">'
-      +'<td style="padding:10px 14px;" colspan="3">Total — May 1–10, 2026</td>'
+      +'<td style="padding:10px 14px;" colspan="3">Total â May 1â10, 2026</td>'
       +'<td style="padding:10px 14px;text-align:right;color:#60a5fa;">'+fmt(grandTotal)+'</td>'
       +'<td style="padding:10px 14px;text-align:center;opacity:0.7;">'+totalMissions+'</td>'
       +'<td style="padding:10px 14px;text-align:right;color:#60a5fa;">'+fmt(grandTotal/totalMissions)+'</td>'
       +'</tr>';
     kpis.innerHTML=''
-      +'<div class="kpi"><div class="label">Total Food Cost</div><div class="value">'+fmt(grandTotal)+'</div><div class="delta">May 1–10, 2026</div></div>'
-      +'<div class="kpi"><div class="label">V104 · ATL→LHR</div><div class="value">'+fmt(v104Total)+'</div><div class="delta">10 departures</div></div>'
-      +'<div class="kpi"><div class="label">V110 · ATL→MAN</div><div class="value">'+fmt(v110Total)+'</div><div class="delta">10 departures</div></div>'
+      +'<div class="kpi"><div class="label">Total Food Cost</div><div class="value">'+fmt(grandTotal)+'</div><div class="delta">May 1â10, 2026</div></div>'
+      +'<div class="kpi"><div class="label">V104 Â· ATLâLHR</div><div class="value">'+fmt(v104Total)+'</div><div class="delta">10 departures</div></div>'
+      +'<div class="kpi"><div class="label">V110 Â· ATLâMAN</div><div class="value">'+fmt(v110Total)+'</div><div class="delta">10 departures</div></div>'
       +'<div class="kpi"><div class="label">Avg Cost / Mission</div><div class="value">'+fmt(grandTotal/totalMissions)+'</div><div class="delta">'+totalMissions+' missions linked</div></div>';
     var ctx=document.getElementById('cFoodCost');
     if(ctx&&window.Chart){
       if(ctx._fc)ctx._fc.destroy();
-      ctx._fc=new Chart(ctx,{type:'bar',data:{labels:chartLabels,datasets:[{label:'V104 ATL→LHR',data:chart104,backgroundColor:'rgba(96,165,250,0.75)',borderRadius:4},{label:'V110 ATL→MAN',data:chart110,backgroundColor:'rgba(52,211,153,0.75)',borderRadius:4}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#94a3b8'}},tooltip:{callbacks:{label:function(c){return c.dataset.label+':  style="position:fixed;inset:0;z-index:9999;background:#0b0f1a;display:flex;align-items:center;justify-content:center;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+      ctx._fc=new Chart(ctx,{type:'bar',data:{labels:chartLabels,datasets:[{label:'V104 ATLâLHR',data:chart104,backgroundColor:'rgba(96,165,250,0.75)',borderRadius:4},{label:'V110 ATLâMAN',data:chart110,backgroundColor:'rgba(52,211,153,0.75)',borderRadius:4}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#94a3b8'}},tooltip:{callbacks:{label:function(c){return c.dataset.label+':  style="position:fixed;inset:0;z-index:9999;background:#0b0f1a;display:flex;align-items:center;justify-content:center;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
   <div style="background:#131929;border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:48px 44px;width:380px;max-width:90vw;text-align:center;box-shadow:0 24px 60px rgba(0,0,0,0.6);">
     <div style="width:52px;height:52px;background:#1e3a5f;border-radius:12px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:20px;font-weight:700;color:#60a5fa;letter-spacing:-0.02em;">MA</div>
     <div style="font-size:11px;text-transform:uppercase;letter-spacing:0.2em;color:#64748b;font-weight:600;margin-bottom:6px;">Mainline Aviation</div>
     <div style="font-size:17px;font-weight:600;color:#e2e8f0;margin-bottom:36px;">Sullivan Rd Missions Dashboard</div>
     <input type="password" id="pw-input" placeholder="Password" autofocus style="width:100%;box-sizing:border-box;padding:13px 16px;background:#0b0f1a;border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:#e2e8f0;font-size:15px;outline:none;margin-bottom:12px;" onkeydown="if(event.key==='Enter')doLogin()">
     <button onclick="doLogin()" style="width:100%;padding:13px;background:#2563eb;border:none;border-radius:8px;color:#fff;font-size:15px;font-weight:600;cursor:pointer;" onmouseover="this.style.background='#1d4ed8'" onmouseout="this.style.background='#2563eb'">Access Dashboard</button>
-    <div id="pw-error" style="color:#f87171;font-size:13px;margin-top:12px;visibility:hidden;">Incorrect password Ã¢ÂÂ please try again.</div>
+    <div id="pw-error" style="color:#f87171;font-size:13px;margin-top:12px;visibility:hidden;">Incorrect password ÃÂ¢ÃÂÃÂ please try again.</div>
   </div>
 </div>
 <script>
@@ -1668,7 +1549,7 @@ async function doLogin(){
     <div style="font-size:17px;font-weight:600;color:#e2e8f0;margin-bottom:36px;">Sullivan Rd Missions Dashboard</div>
     <input type="password" id="pw-input" placeholder="Password" autofocus style="width:100%;box-sizing:border-box;padding:13px 16px;background:#0b0f1a;border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:#e2e8f0;font-size:15px;outline:none;margin-bottom:12px;" onkeydown="if(event.key==='Enter')doLogin()">
     <button onclick="doLogin()" style="width:100%;padding:13px;background:#2563eb;border:none;border-radius:8px;color:#fff;font-size:15px;font-weight:600;cursor:pointer;" onmouseover="this.style.background='#1d4ed8'" onmouseout="this.style.background='#2563eb'">Access Dashboard</button>
-    <div id="pw-error" style="color:#f87171;font-size:13px;margin-top:12px;visibility:hidden;">Incorrect password Ã¢ÂÂ please try again.</div>
+    <div id="pw-error" style="color:#f87171;font-size:13px;margin-top:12px;visibility:hidden;">Incorrect password ÃÂ¢ÃÂÃÂ please try again.</div>
   </div>
 </div>
 <script>
@@ -1695,6 +1576,153 @@ async function doLogin(){
   });
   </script>
 
+
+  <div class="tab-panel" id="panel-financing">
+    <section class="kpis" id="fin-kpis"></section>
+    <div class="section-title">Food Cost by Flight — May 2026</div>
+    <section class="grid grid-1">
+      <div class="card">
+        <h3>Daily Food Cost <span class="hint">USD · supplier invoice incl. tax</span></h3>
+        <div class="card-chart tall"><canvas id="cFoodCost"></canvas></div>
+      </div>
+    </section>
+    <div class="section-title">Cost Breakdown by Mission</div>
+    <section class="grid grid-1">
+      <div class="card" style="padding:0;overflow:hidden;">
+        <table style="width:100%;border-collapse:collapse;font-size:13px;">
+          <thead>
+            <tr style="background:rgba(255,255,255,0.05);text-align:left;">
+              <th style="padding:10px 14px;font-weight:600;border-bottom:1px solid rgba(255,255,255,0.07);">Date</th>
+              <th style="padding:10px 14px;font-weight:600;border-bottom:1px solid rgba(255,255,255,0.07);">Flight</th>
+              <th style="padding:10px 14px;font-weight:600;border-bottom:1px solid rgba(255,255,255,0.07);">Route</th>
+              <th style="padding:10px 14px;font-weight:600;border-bottom:1px solid rgba(255,255,255,0.07);text-align:right;">Food Cost</th>
+              <th style="padding:10px 14px;font-weight:600;border-bottom:1px solid rgba(255,255,255,0.07);text-align:center;">Missions</th>
+              <th style="padding:10px 14px;font-weight:600;border-bottom:1px solid rgba(255,255,255,0.07);text-align:right;">Cost / Mission</th>
+            </tr>
+          </thead>
+          <tbody id="finTableBody"></tbody>
+          <tfoot id="finTableFoot"></tfoot>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <script>
+  (function(){
+    var foodCosts={"2026-05-01":{"104":{r:"ATL→LHR",t:8549.55},"110":{r:"ATL→MAN",t:6097.81}},"2026-05-02":{"104":{r:"ATL→LHR",t:7696.54},"110":{r:"ATL→MAN",t:5747.35}},"2026-05-03":{"104":{r:"ATL→LHR",t:8390.95},"110":{r:"ATL→MAN",t:6279.28}},"2026-05-04":{"104":{r:"ATL→LHR",t:8300.94},"110":{r:"ATL→MAN",t:6396.47}},"2026-05-05":{"104":{r:"ATL→LHR",t:7652.39},"110":{r:"ATL→MAN",t:6132.13}},"2026-05-06":{"104":{r:"ATL→LHR",t:7356.35},"110":{r:"ATL→MAN",t:5658.77}},"2026-05-07":{"104":{r:"ATL→LHR",t:7721.96},"110":{r:"ATL→MAN",t:5991.99}},"2026-05-08":{"104":{r:"ATL→LHR",t:8131.25},"110":{r:"ATL→MAN",t:6033.51}},"2026-05-09":{"104":{r:"ATL→LHR",t:8219.44},"110":{r:"ATL→MAN",t:6430.59}},"2026-05-10":{"104":{r:"ATL→LHR",t:8233.10},"110":{r:"ATL→MAN",t:6047.14}}};
+    var mc={"2026-05-01":{"104":4,"110":4},"2026-05-02":{"104":4,"110":4},"2026-05-03":{"104":4,"110":2},"2026-05-04":{"104":4,"110":4},"2026-05-05":{"104":4,"110":2},"2026-05-06":{"104":4,"110":2},"2026-05-07":{"104":4,"110":4},"2026-05-08":{"104":4,"110":4},"2026-05-09":{"104":4,"110":4},"2026-05-10":{"104":4,"110":4}};
+    function fmt(n){return ' style="position:fixed;inset:0;z-index:9999;background:#0b0f1a;display:flex;align-items:center;justify-content:center;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+  <div style="background:#131929;border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:48px 44px;width:380px;max-width:90vw;text-align:center;box-shadow:0 24px 60px rgba(0,0,0,0.6);">
+    <div style="width:52px;height:52px;background:#1e3a5f;border-radius:12px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:20px;font-weight:700;color:#60a5fa;letter-spacing:-0.02em;">MA</div>
+    <div style="font-size:11px;text-transform:uppercase;letter-spacing:0.2em;color:#64748b;font-weight:600;margin-bottom:6px;">Mainline Aviation</div>
+    <div style="font-size:17px;font-weight:600;color:#e2e8f0;margin-bottom:36px;">Sullivan Rd Missions Dashboard</div>
+    <input type="password" id="pw-input" placeholder="Password" autofocus style="width:100%;box-sizing:border-box;padding:13px 16px;background:#0b0f1a;border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:#e2e8f0;font-size:15px;outline:none;margin-bottom:12px;" onkeydown="if(event.key==='Enter')doLogin()">
+    <button onclick="doLogin()" style="width:100%;padding:13px;background:#2563eb;border:none;border-radius:8px;color:#fff;font-size:15px;font-weight:600;cursor:pointer;" onmouseover="this.style.background='#1d4ed8'" onmouseout="this.style.background='#2563eb'">Access Dashboard</button>
+    <div id="pw-error" style="color:#f87171;font-size:13px;margin-top:12px;visibility:hidden;">Incorrect password ÃÂ¢ÃÂÃÂ please try again.</div>
+  </div>
+</div>
+<script>
+(function(){if(sessionStorage.getItem('ma_dash_auth')==='1'){document.getElementById('login-overlay').style.display='none';}})();
+async function doLogin(){
+  const pw=document.getElementById('pw-input').value;
+  const buf=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(pw));
+  const hex=Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,'0')).join('');
+  if(hex==='976cde1020d3eaa062913df972c6e436e509109e2f68b4e0fea641dbc8595a18'){
+    sessionStorage.setItem('ma_dash_auth','1');
+    document.getElementById('login-overlay').style.display='none';
+  } else {
+    document.getElementById('pw-error').style.visibility='visible';
+    document.getElementById('pw-input').value='';
+    document.getElementById('pw-input').focus();
+  }
+}
+</script>
+</body></html>+n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});}
+    function fd(d){return new Date(d+'T12:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});}
+    function render(){
+      var tbody=document.getElementById('finTableBody'),tfoot=document.getElementById('finTableFoot'),kpis=document.getElementById('fin-kpis');
+      if(!tbody||tbody.children.length)return;
+      var rows='',gt=0,t104=0,t110=0,tm=0,cl=[],c4=[],c10=[];
+      Object.keys(foodCosts).sort().forEach(function(d){
+        ['104','110'].forEach(function(f){
+          var fc=foodCosts[d][f],m=(mc[d]||{})[f]||'--',cpm=(typeof m==='number')?fmt(fc.t/m):'--';
+          gt+=fc.t; if(f==='104')t104+=fc.t; else t110+=fc.t; if(typeof m==='number')tm+=m;
+          rows+='<tr style="border-bottom:1px solid rgba(255,255,255,0.04);" onmouseover="this.style.background='rgba(255,255,255,0.03)'" onmouseout="this.style.background=''">'
+            +'<td style="padding:9px 14px;">'+fd(d)+'</td>'
+            +'<td style="padding:9px 14px;"><span style="font-family:monospace;background:rgba(96,165,250,0.15);color:#60a5fa;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600;">V'+f+'</span></td>'
+            +'<td style="padding:9px 14px;opacity:0.65;">'+fc.r+'</td>'
+            +'<td style="padding:9px 14px;text-align:right;">'+fmt(fc.t)+'</td>'
+            +'<td style="padding:9px 14px;text-align:center;opacity:0.65;">'+m+'</td>'
+            +'<td style="padding:9px 14px;text-align:right;color:'+(typeof m==='number'?'#34d399':'inherit')+';">'+cpm+'</td>'
+            +'</tr>';
+        });
+        cl.push(fd(d).replace(', 2026','')); c4.push(foodCosts[d]['104'].t); c10.push(foodCosts[d]['110'].t);
+      });
+      tbody.innerHTML=rows;
+      tfoot.innerHTML='<tr style="background:rgba(255,255,255,0.06);font-weight:600;"><td style="padding:10px 14px;" colspan="3">Total — May 1–10, 2026</td><td style="padding:10px 14px;text-align:right;color:#60a5fa;">'+fmt(gt)+'</td><td style="padding:10px 14px;text-align:center;opacity:0.65;">'+tm+'</td><td style="padding:10px 14px;text-align:right;color:#60a5fa;">'+fmt(gt/tm)+'</td></tr>';
+      kpis.innerHTML='<div class="kpi"><div class="label">Total Food Cost</div><div class="value">'+fmt(gt)+'</div><div class="delta">May 1–10, 2026</div></div>'
+        +'<div class="kpi"><div class="label">V104 · ATL→LHR</div><div class="value">'+fmt(t104)+'</div><div class="delta">10 departures</div></div>'
+        +'<div class="kpi"><div class="label">V110 · ATL→MAN</div><div class="value">'+fmt(t110)+'</div><div class="delta">10 departures</div></div>'
+        +'<div class="kpi"><div class="label">Avg Cost / Mission</div><div class="value">'+fmt(gt/tm)+'</div><div class="delta">'+tm+' missions linked</div></div>';
+      var ctx=document.getElementById('cFoodCost');
+      if(ctx&&window.Chart){if(ctx._fc)ctx._fc.destroy();ctx._fc=new Chart(ctx,{type:'bar',data:{labels:cl,datasets:[{label:'V104 ATL→LHR',data:c4,backgroundColor:'rgba(96,165,250,0.75)',borderRadius:4},{label:'V110 ATL→MAN',data:c10,backgroundColor:'rgba(52,211,153,0.75)',borderRadius:4}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#94a3b8'}},tooltip:{callbacks:{label:function(c){return c.dataset.label+':  style="position:fixed;inset:0;z-index:9999;background:#0b0f1a;display:flex;align-items:center;justify-content:center;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+  <div style="background:#131929;border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:48px 44px;width:380px;max-width:90vw;text-align:center;box-shadow:0 24px 60px rgba(0,0,0,0.6);">
+    <div style="width:52px;height:52px;background:#1e3a5f;border-radius:12px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:20px;font-weight:700;color:#60a5fa;letter-spacing:-0.02em;">MA</div>
+    <div style="font-size:11px;text-transform:uppercase;letter-spacing:0.2em;color:#64748b;font-weight:600;margin-bottom:6px;">Mainline Aviation</div>
+    <div style="font-size:17px;font-weight:600;color:#e2e8f0;margin-bottom:36px;">Sullivan Rd Missions Dashboard</div>
+    <input type="password" id="pw-input" placeholder="Password" autofocus style="width:100%;box-sizing:border-box;padding:13px 16px;background:#0b0f1a;border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:#e2e8f0;font-size:15px;outline:none;margin-bottom:12px;" onkeydown="if(event.key==='Enter')doLogin()">
+    <button onclick="doLogin()" style="width:100%;padding:13px;background:#2563eb;border:none;border-radius:8px;color:#fff;font-size:15px;font-weight:600;cursor:pointer;" onmouseover="this.style.background='#1d4ed8'" onmouseout="this.style.background='#2563eb'">Access Dashboard</button>
+    <div id="pw-error" style="color:#f87171;font-size:13px;margin-top:12px;visibility:hidden;">Incorrect password ÃÂ¢ÃÂÃÂ please try again.</div>
+  </div>
+</div>
+<script>
+(function(){if(sessionStorage.getItem('ma_dash_auth')==='1'){document.getElementById('login-overlay').style.display='none';}})();
+async function doLogin(){
+  const pw=document.getElementById('pw-input').value;
+  const buf=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(pw));
+  const hex=Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,'0')).join('');
+  if(hex==='976cde1020d3eaa062913df972c6e436e509109e2f68b4e0fea641dbc8595a18'){
+    sessionStorage.setItem('ma_dash_auth','1');
+    document.getElementById('login-overlay').style.display='none';
+  } else {
+    document.getElementById('pw-error').style.visibility='visible';
+    document.getElementById('pw-input').value='';
+    document.getElementById('pw-input').focus();
+  }
+}
+</script>
+</body></html>+c.raw.toLocaleString('en-US',{minimumFractionDigits:2});}}}},scales:{x:{ticks:{color:'#64748b'},grid:{color:'rgba(255,255,255,0.05)'}},y:{ticks:{color:'#64748b',callback:function(v){return ' style="position:fixed;inset:0;z-index:9999;background:#0b0f1a;display:flex;align-items:center;justify-content:center;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+  <div style="background:#131929;border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:48px 44px;width:380px;max-width:90vw;text-align:center;box-shadow:0 24px 60px rgba(0,0,0,0.6);">
+    <div style="width:52px;height:52px;background:#1e3a5f;border-radius:12px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:20px;font-weight:700;color:#60a5fa;letter-spacing:-0.02em;">MA</div>
+    <div style="font-size:11px;text-transform:uppercase;letter-spacing:0.2em;color:#64748b;font-weight:600;margin-bottom:6px;">Mainline Aviation</div>
+    <div style="font-size:17px;font-weight:600;color:#e2e8f0;margin-bottom:36px;">Sullivan Rd Missions Dashboard</div>
+    <input type="password" id="pw-input" placeholder="Password" autofocus style="width:100%;box-sizing:border-box;padding:13px 16px;background:#0b0f1a;border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:#e2e8f0;font-size:15px;outline:none;margin-bottom:12px;" onkeydown="if(event.key==='Enter')doLogin()">
+    <button onclick="doLogin()" style="width:100%;padding:13px;background:#2563eb;border:none;border-radius:8px;color:#fff;font-size:15px;font-weight:600;cursor:pointer;" onmouseover="this.style.background='#1d4ed8'" onmouseout="this.style.background='#2563eb'">Access Dashboard</button>
+    <div id="pw-error" style="color:#f87171;font-size:13px;margin-top:12px;visibility:hidden;">Incorrect password ÃÂ¢ÃÂÃÂ please try again.</div>
+  </div>
+</div>
+<script>
+(function(){if(sessionStorage.getItem('ma_dash_auth')==='1'){document.getElementById('login-overlay').style.display='none';}})();
+async function doLogin(){
+  const pw=document.getElementById('pw-input').value;
+  const buf=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(pw));
+  const hex=Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,'0')).join('');
+  if(hex==='976cde1020d3eaa062913df972c6e436e509109e2f68b4e0fea641dbc8595a18'){
+    sessionStorage.setItem('ma_dash_auth','1');
+    document.getElementById('login-overlay').style.display='none';
+  } else {
+    document.getElementById('pw-error').style.visibility='visible';
+    document.getElementById('pw-input').value='';
+    document.getElementById('pw-input').focus();
+  }
+}
+</script>
+</body></html>+v.toLocaleString();}},grid:{color:'rgba(255,255,255,0.05)'}}}}}); }
+    }
+    document.querySelectorAll('.tab').forEach(function(b){b.addEventListener('click',function(){if(b.dataset.tab==='financing')setTimeout(render,50);});});
+  })();
+  </script>
+
 <div id="login-overlay" style="position:fixed;inset:0;z-index:9999;background:#0b0f1a;display:flex;align-items:center;justify-content:center;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
   <div style="background:#131929;border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:48px 44px;width:380px;max-width:90vw;text-align:center;box-shadow:0 24px 60px rgba(0,0,0,0.6);">
     <div style="width:52px;height:52px;background:#1e3a5f;border-radius:12px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:20px;font-weight:700;color:#60a5fa;letter-spacing:-0.02em;">MA</div>
@@ -1702,7 +1730,7 @@ async function doLogin(){
     <div style="font-size:17px;font-weight:600;color:#e2e8f0;margin-bottom:36px;">Sullivan Rd Missions Dashboard</div>
     <input type="password" id="pw-input" placeholder="Password" autofocus style="width:100%;box-sizing:border-box;padding:13px 16px;background:#0b0f1a;border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:#e2e8f0;font-size:15px;outline:none;margin-bottom:12px;" onkeydown="if(event.key==='Enter')doLogin()">
     <button onclick="doLogin()" style="width:100%;padding:13px;background:#2563eb;border:none;border-radius:8px;color:#fff;font-size:15px;font-weight:600;cursor:pointer;" onmouseover="this.style.background='#1d4ed8'" onmouseout="this.style.background='#2563eb'">Access Dashboard</button>
-    <div id="pw-error" style="color:#f87171;font-size:13px;margin-top:12px;visibility:hidden;">Incorrect password Ã¢ÂÂ please try again.</div>
+    <div id="pw-error" style="color:#f87171;font-size:13px;margin-top:12px;visibility:hidden;">Incorrect password ÃÂ¢ÃÂÃÂ please try again.</div>
   </div>
 </div>
 <script>
