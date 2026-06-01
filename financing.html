@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Financing - Mainline Aviation</title>
+<title>Financing - Virgin Atlantic | Mainline Aviation</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0a0e1a;color:#e8eef5;padding:24px;}
@@ -38,10 +38,10 @@ tfoot td.r{text-align:right;color:#60a5fa;}
 </style>
 </head>
 <body>
-<div class="kpis" id="kpis"></div>
+<div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;padding:14px 18px;background:#131826;border:1px solid rgba(255,255,255,0.07);border-radius:10px;"><div style="background:#C41E3A;border-radius:8px;padding:6px 14px;font-size:13px;font-weight:700;color:#fff;letter-spacing:0.05em;">VS</div><div><div style="font-size:15px;font-weight:700;color:#e8eef5;">Virgin Atlantic</div><div style="font-size:12px;color:#64748b;">Supplier Invoice Report - May 2026 &middot; ATL Hub</div></div></div><div class="kpis" id="kpis"></div>
 <div class="section-title">Daily Food Cost - May 2026</div>
 <div class="card"><h3>Total Food Cost by Flight (USD)</h3><div class="chart-wrap"><canvas id="chart"></canvas></div></div>
-<div class="section-title">Cost Breakdown - All 20 Flights</div>
+<div class="section-title">Virgin Atlantic - Cost Breakdown (All 20 Flights)</div>
 <div class="filters">
   <label>Flight:</label>
   <select id="fF" onchange="render()"><option value="">All</option><option value="104">V104 - ATL to LHR</option><option value="110">V110 - ATL to MAN</option></select>
@@ -50,9 +50,9 @@ tfoot td.r{text-align:right;color:#60a5fa;}
   <span class="info" id="info"></span>
 </div>
 <div class="tbl-wrap"><table>
-  <thead><tr><th>Date</th><th>Flight</th><th>Route</th><th>Team Lead(s)</th><th class="r">Food Cost</th></tr></thead>
+  <thead><tr><th>Date</th><th>Flight</th><th>Airline</th><th>Route</th><th>Team Lead(s)</th><th class="r">Food Cost</th></tr></thead>
   <tbody id="tbody"></tbody>
-  <tfoot><tr><td colspan="4">Total</td><td class="r" id="ft"></td></tr></tfoot>
+  <tfoot><tr><td colspan="5">Total</td><td class="r" id="ft"></td></tr></tfoot>
 </table></div>
 <script>
 var raw=[["2026-05-01","104","ATL-LHR",8549.55,["Bobbie Jackson III","Gabriel Silva Mane"]],
@@ -84,7 +84,7 @@ var gt=data.reduce(function(s,r){return s+r.cost;},0);
 var v104t=data.filter(function(r){return r.ob==="104";}).reduce(function(s,r){return s+r.cost;},0);
 var v110t=data.filter(function(r){return r.ob==="110";}).reduce(function(s,r){return s+r.cost;},0);
 var allLeads=new Set();data.forEach(function(r){r.leads.forEach(function(l){allLeads.add(l);});});
-document.getElementById("kpis").innerHTML="<div class='kpi'><div class='label'>Total Food Cost</div><div class='value'>"+fmt(gt)+"</div><div class='delta'>May 1-10 V104 + V110</div></div><div class='kpi'><div class='label'>V104 Total</div><div class='value'>"+fmt(v104t)+"</div><div class='delta'>ATL to LHR - 10 flights</div></div><div class='kpi'><div class='label'>V110 Total</div><div class='value'>"+fmt(v110t)+"</div><div class='delta'>ATL to MAN - 10 flights</div></div><div class='kpi'><div class='label'>Team Leads</div><div class='value'>"+allLeads.size+"</div><div class='delta'>All 20 flights matched</div></div>";
+document.getElementById("kpis").innerHTML="<div class='kpi'><div class='label'>Total Food Cost</div><div class='value'>"+fmt(gt)+"</div><div class='delta'>May 1-10 V104 + V110</div></div><div class='kpi'><div class='label'>V104 Total</div><div class='value'>"+fmt(v104t)+"</div><div class='delta'>ATL to LHR - 10 flights</div></div><div class='kpi'><div class='label'>V110 Total</div><div class='value'>"+fmt(v110t)+"</div><div class='delta'>ATL to MAN - 10 flights</div></div><div class='kpi'><div class='label'>Team Leads</div><div class='value'>"+allLeads.size+"</div><div class='delta'>Virgin Atlantic - All 20 matched</div></div>";
 new Chart(document.getElementById("chart"),{type:"bar",data:{labels:dates.map(function(d){return fd(d).replace(", 2026","");}),datasets:[{label:"V104 ATL-LHR",data:dates.map(function(d){return(data.find(function(r){return r.date===d&&r.ob==="104";})||{cost:0}).cost;}),backgroundColor:"rgba(96,165,250,0.75)",borderRadius:4},{label:"V110 ATL-MAN",data:dates.map(function(d){return(data.find(function(r){return r.date===d&&r.ob==="110";})||{cost:0}).cost;}),backgroundColor:"rgba(52,211,153,0.75)",borderRadius:4}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:"#94a3b8"}},tooltip:{callbacks:{label:function(c){return c.dataset.label+": "+fmt(c.raw);}}}},scales:{x:{ticks:{color:"#64748b"},grid:{color:"rgba(255,255,255,0.05)"}},y:{ticks:{color:"#64748b",callback:function(v){return "$"+v.toLocaleString();}},grid:{color:"rgba(255,255,255,0.05)"}}}}});
 function render(){
   var flt=document.getElementById("fF").value,fdt=document.getElementById("fD").value;
@@ -93,7 +93,7 @@ function render(){
   rows.forEach(function(r){
     var bc=r.ob==="110"?"v110":"";tc+=r.cost;
     var lh=r.leads.map(function(l){return "<span class='chip'>"+l+"</span>";}).join("");
-    h2+="<tr><td>"+fd(r.date)+"</td><td><span class='badge "+bc+"'>V"+r.ob+"</span></td><td class='dim'>"+r.route+"</td><td><div class='leads'>"+lh+"</div></td><td class='r green'>"+fmt(r.cost)+"</td></tr>";
+    h2+="<tr><td>"+fd(r.date)+"</td><td><span class='badge "+bc+"'>V"+r.ob+"</span></td><td><span style='background:rgba(196,30,58,0.15);color:#f87171;font-size:11px;font-weight:700;padding:2px 8px;border-radius:4px;'>Virgin Atlantic</span></td><td class='dim'>"+r.route+"</td><td><div class='leads'>"+lh+"</div></td><td class='r green'>"+fmt(r.cost)+"</td></tr>";
   });
   document.getElementById("tbody").innerHTML=h2;
   document.getElementById("info").textContent=rows.length+" rows";
