@@ -57,12 +57,12 @@ tfoot td.r{text-align:right;color:#60a5fa;}tfoot td.c{text-align:center;color:#6
 <div class="tbl-wrap"><table>
   <thead><tr>
     <th>Date</th><th>Flight</th><th>Aircraft</th><th>Team Lead(s)</th>
-    <th class="c">Missions</th><th class="r">Cost / Mission</th><th class="r">Total</th>
+    <th class="r">Cost / Mission</th><th class="r">Total</th>
   </tr></thead>
   <tbody id="tbody"></tbody>
   <tfoot><tr>
-    <td colspan="4">Total</td>
-    <td class="c" id="fm"></td><td class="r" id="fa"></td><td class="r" id="ft"></td>
+    <td colspan="5">Total</td>
+    <td class="r" id="fa"></td><td class="r" id="ft"></td>
   </tr></tfoot>
 </table></div>
 <script>
@@ -105,16 +105,16 @@ new Chart(document.getElementById("chart"),{type:"bar",data:{labels:cd.map(funct
 function render(){
   var flt=document.getElementById("fF").value,fdt=document.getElementById("fD").value;
   var rows=data.filter(function(r){return(!flt||r.ob===flt)&&(!fdt||r.date===fdt);});
-  var h2="",tm2=0,tc=0;
+  var h2="",tc=0;
   rows.forEach(function(r){
     var bc=r.ob==="110"?"v110":"";
-    tm2+=r.missions;tc+=r.total;
+    tc+=r.total;
     var chips=r.leads.map(function(l){return "<span class='chip'>"+l+"</span>";}).join("");
     h2+="<tr><td>"+fd(r.date)+"</td><td><span class='badge "+bc+"'>V"+r.ob+"</span></td><td class='dim'>"+r.asset+"</td><td><div class='leads'>"+chips+"</div></td><td class='c'><span class='mc'>"+r.missions+"</span></td><td class='r'>"+fmt(r.cpm)+"</td><td class='r green'>"+fmt(r.total)+"</td></tr>";
   });
   document.getElementById("tbody").innerHTML=h2;
   document.getElementById("info").textContent=rows.length+" rows";
-  document.getElementById("fm").textContent=tm2;
+  
   document.getElementById("fa").textContent=fmt(tc/tm2);
   document.getElementById("ft").textContent=fmt(tc);
 }
